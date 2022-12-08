@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>МГУ</title>
+        <meta charset="utf-8">
+        <title>Lab5</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="import" href="HTML/personal_cabinet.html">
+    </head>
+    <body>
+        <div>
+            <header>
+                <img src="images/logo.png" id="logo" width="140px" height="140px">
+                <button id="text_logo" onclick="pageRedirect('main_page')">Московский Государственный Университет</button>
+                <button id="per_cabinet" onclick="pageRedirect('personal_cabinet')">Личный кабинет</button>
+            </header>
+        </div>
+        <form id="form_login">
+            <div id="text_login_0">Вход в личный кабинет</div>
+            <div id="text_login_1">Заполните поля для входа</div>
+            <input id="email" placeholder="Email"  class="pole">
+            <span name="login_span">Введите логин</span>
+            <div class="errors hide" id="email-err">placeholder</div>
+            <input id="password" placeholder="Пароль"  class="pole">
+            <span name="login_span">Введите пароль</span>
+            <div class="errors hide" id="password-err">placeholder</div>
+            <button type="button" id="button_login">Войти</button>
+            <div class="errors hide block" id="error-log">placeholder</div>
+            <button type="button" id="button_to_regist" onclick="Switch_login_regist('regist')">Зарегистрироваться</button>
+        </form>
+        <form id="form_regist">
+            <div id="text_regist">Регистрация</div>
+            <div id="access_regist">Пользователь зарегистрирован</div>
+            <input id="type_name" placeholder="Имя">
+            <span name="registration">Введите имя</span>
+            <input id="type_surname" placeholder="Фамилия">
+            <span name="registration">Введите фамилию</span>
+            <input id="type_password" placeholder="Пароль">
+            <span name="registration">Введите пароль</span>
+            <input id="confirm_password" placeholder="Подтверждение пароля">
+            <span name="registration">Подтвердите пароль</span>
+            <input id="type_email" placeholder="Email">
+            <span name="registration">Введите email</span>
+            <button type="button" id="button_regist">Зарегистрироваться</button>
+            <button type="button" id="button_to_login" onclick="Switch_login_regist('login')">Вход</button>
+        </form>
+        <div id="footer">
+            <div id="footer_flex">
+                <div>&copy; 21ВП2 Изгарев Владислав & Копылов Егор</div>
+                <div>МГУ</div>
+            </div>
+        </div>
+    </body>
+    <script src="./js/sign-in.js"></script>
+    <script src="./js/SwitchLoginRegist.js"></script>
+    <script src="./JS/sign-up.js"></script>
+</html>
