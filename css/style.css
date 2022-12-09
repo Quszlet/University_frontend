@@ -27,7 +27,7 @@ button {
     background: none;
 }
 
-#per_cabinet, #registration{
+#per_cabinet, #registration, #admin_back{
     border-radius: 3px;
     border: 2px solid rgb(18, 35, 50);
     float: right;
@@ -44,6 +44,11 @@ button {
 }
 
 #registration:hover{
+    background-color:rgb(18, 35, 50);
+    transition: 0.7s;
+}
+
+#admin_back:hover{
     background-color:rgb(18, 35, 50);
     transition: 0.7s;
 }
@@ -275,4 +280,10 @@ button {
 #avatar {
     width: 22vw;
     padding: 0vw 1vw 1vw 0vw;
+}
+
+.table_input{
+    background-color: white;
+    outline:none;
+    border: none;
 }

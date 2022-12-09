@@ -9,17 +9,22 @@ function createUsersTable(usersData) {
         <td>Id пользователя</td>
         <td>Имя пользователя</td>
         <td>Фамилия пользователя</td>
-        <td>Email полльзователя</td>
+        <td>Email пользователя</td>
         <td>Роль пользователя</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>`
     for (let i = 0; i < usersData.length; i++) {
         let additionalHtml = `
         <tr>
             <td>${usersData[i].id}</td>
-            <td>${usersData[i].firstName}</td>
-            <td>${usersData[i].lastName}</td>
-            <td>${usersData[i].email}</td>
+            <td><input class="table_input" id='table_firstName-${[i]}' value='${usersData[i].firstName}'></td>
+            <td><input class="table_input" id='table_lastName-${[i]}' value='${usersData[i].lastName}'></td>
+            <td><input class="table_input" id='table_email-${[i]}' value='${usersData[i].email}'></td>
             <td id="table-role-${i}">${usersData[i].role}</td>
+            <td><button id="change-${i}" class="change-buttons">Изменить данные</button></td>
             <td><button id="delete-${i}" class="delete-buttons">Удалить</button></td>
             <td>
                 <select id="select-${i}">
@@ -28,7 +33,7 @@ function createUsersTable(usersData) {
                     <option value="ROLE_ADMIN">Администратор</option>
                 </select>
             </td>
-            <td><button id="change-${i}" class="change-buttons">Изменить роль</button></td>
+            <td><button id="change-role-${i}" class="change-role-buttons">Изменить роль</button></td>
         </tr>`
         html += additionalHtml
     }
@@ -80,9 +85,9 @@ function addEventsToButtons(buttonType, usersData) {
                 })
             }
             break
-        case 'change-buttons':
+        case 'change-role-buttons':
             for (let i = 0; i < usersData.length; i++) {
-                document.getElementById(`change-${i}`).addEventListener('click', () => {
+                document.getElementById(`change-role-${i}`).addEventListener('click', () => {
                     let select = document.getElementById(`select-${i}`)
                     let change_url = `http://localhost:8080/users/raise/${usersData[i].id}/${select.value}`
                     fetch(change_url, {
@@ -102,6 +107,34 @@ function addEventsToButtons(buttonType, usersData) {
                 })
             }
             break
+            case 'change-buttons':
+                console.log(usersData.length)
+                for (let i = 0; i < usersData.length; i++) {
+                    document.getElementById(`change-${i}`).addEventListener('click', () => {
+                        let change_url = `http://localhost:8080/users/change/${usersData[i].id}`
+                        let requestBody = {
+                            "firstName": document.getElementById(`table_firstName-${[i]}`).value,
+                            "lastName": document.getElementById(`table_lastName-${[i]}`).value,
+                            "email": document.getElementById(`table_email-${[i]}`).value
+                        }
+                        fetch(change_url, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                            },
+                            body: JSON.stringify(requestBody)
+                        }).then(async response => {
+                            if (response.ok) {
+                                let data = await response.json()
+                                alert(`Данные пользователя с id = ${usersData[i]}  изменены!`)
+                                loadTable(document.getElementById('users-table'),
+                                    'delete-buttons', 'change-buttons')
+                            }
+                        })
+                    })
+                }
+                break
         default:
             break
     }
