@@ -5,8 +5,8 @@ document.getElementById('button_regist').addEventListener('click', e => {
     let requestBody = {
         "firstName": document.getElementById('type_name').value,
         "lastName": document.getElementById('type_surname').value,
-        "email": document.getElementById('type_password').value,
-        "password": document.getElementById('type_email').value
+        "email": document.getElementById('type_email').value,
+        "password": document.getElementById('type_password').value
     }
     console.log(requestBody);
     const url = 'http://localhost:8080/auth/signup';
@@ -23,14 +23,13 @@ document.getElementById('button_regist').addEventListener('click', e => {
             let fields = Object.keys(data)
             let errors = Object.values(data)
             for (let i = 0; i < fields.length; i++) {
-                let errorEl = document.getElementById(`${fields[i]}-err`)
+                let errorEl = document.getElementById(`${fields[i]}-err1`)
                 errorEl.textContent = errors[i]
-                errorEl.classList.remove('hide')
-                document.getElementById(`${fields[i]}`).classList.add('error-class')
+                errorEl.style.color = "black"
             }
         } else if (response.status == 406) {
             let data = await response.json()
-            let errorEl = document.getElementById(`${Object.keys(data)[0]}-err`)
+            let errorEl = document.getElementById(`${Object.keys(data)[0]}-err1`)
             errorEl.textContent = Object.values(data)[0];
             errorEl.classList.remove('hide')
             document.getElementById(`${Object.keys(data)[0]}`).classList.add('error-class')

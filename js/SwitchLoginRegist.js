@@ -3,16 +3,16 @@ function Switch_login_regist(name){
         case "regist":
             document.getElementById("form_login").style.display = "none";
             document.getElementById("form_regist").style.display = "block";
-            document.getElementById("form_login").style.height = "285px";
-            document.querySelectorAll('.errors').forEach(element => element.style.display = "none");
+            document.getElementById("form_login").style.height = "325px";
+            document.querySelectorAll('.errors').forEach(element => element.style.color = "rgb(249, 248, 248)");
             clear_input();
             break;
         case "login":
-            document.getElementById("form_regist").style.height = "425px";
+            document.getElementById("form_regist").style.height = "490px";
             document.getElementById("form_login").style.display = "block";
             document.getElementById("form_regist").style.display = "none";
             document.getElementById("access_regist").style.display = "none";
-            document.querySelectorAll('.errors').forEach(element => element.style.display = "none");
+            document.querySelectorAll('.errors').forEach(element => element.style.color = "rgb(249, 248, 248)");
             clear_input();
             break;    
     }

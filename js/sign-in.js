@@ -17,25 +17,13 @@ document.getElementById('button_login').addEventListener('click', e => {
         if (response.ok) {
             let data = await response.json()
             sessionStorage.setItem('token', data.message)
-            document.location.replace('../html/profile.html')
+            document.location.replace('../html/personal_cabinet.html')
         } else if (response.status == 403) {
             let errorEl = document.getElementById('error-log')
             errorEl.textContent = 'Введены неверные учетные данные'
-            errorEl.style.display = "block"
-            let height_form =  285;
-            form = document.getElementById("form_login")
-            form.style.height =  `${height_form += 45}px`; 
+            errorEl.style.color = "black"
         } else if (response.status == 400) {
-            let data = await response.json()
-            let fields = Object.keys(data)
-            let errors = Object.values(data)
-            for (let i = 0; i < fields.length; i++) {
-                let errorEl = document.getElementById(`${fields[i]}-err`)
-                errorEl.textContent = errors[i]
-                errorEl.style.display = "block"
-                let height_form =  285;
-                document.getElementById("form_login").style.height =  `${height_form += 35}px`; 
-            }
+            document.getElementById('error-log').style.color = "black"
         }
     })
 

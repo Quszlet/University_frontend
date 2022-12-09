@@ -59,7 +59,7 @@ button {
     background-color: rgb(249, 248, 248);
     border: 2px solid rgb(18, 35, 50);
     width: 400px;
-    height: 285px;
+    height: 325px;
 }
 
 #form_login div, #form_regist div {
@@ -131,7 +131,7 @@ button {
     background-color: rgb(249, 248, 248);
     border: 2px solid rgb(18, 35, 50);
     width: 400px;
-    height: 425px;
+    height: 490px;
 }
 
 #form_regist span, #form_login span{
@@ -230,4 +230,49 @@ button {
 
 #text_login_to_cabinet1{
     font-size: 16px;
+}
+
+#personal_cabinet{
+    display: block;
+    padding: 10px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(18, 35, 50);
+}
+
+#send_photo{
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    border: 0;
+}
+
+#logout{
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    border: 0;
+}
+
+#block{
+    font-size: 13px;
+    text-align: left;
+    padding: 5px;
+}
+
+#firstName-err1, #lastName-err1, #password-err1, #email-err1{
+    color: rgb(249, 248, 248);
+}
+
+#avatar {
+    width: 22vw;
+    padding: 0vw 1vw 1vw 0vw;
 }

@@ -81,7 +81,6 @@ document.getElementById('logout').addEventListener('click', e => {
 })
 
 document.getElementById('send-photo').addEventListener('click', e => {
-    document.getElementById('avatar-err').classList.add('hide')
     const upload_avatar_url = 'http://localhost:8080/avatar/send'
     let image = document.getElementById('photo').files[0]
     let formData = new FormData()
@@ -118,7 +117,7 @@ function reloadAvatar(url) {
     }).then(async response => {
         if (response.ok) {
             let data = await response.json()
-            document.getElementById('avatar').setAttribute('src', data.message)
+            document.getElementById('avatar').setAttribute('src', data.message.slice(data.message.indexOf("images") - 1))
         } else {
             let data = await response.json()
             document.getElementById('avatar-err').textContent = data.message;
