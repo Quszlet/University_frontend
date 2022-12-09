@@ -4,3 +4,6 @@ function makeRelocateButton(buttonId, pageUrl) {
     })
 }
 
+function pageRedict(pageUrl) {
+        document.location.href = '../html/' + pageUrl + ".html"
+}

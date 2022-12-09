@@ -3,7 +3,7 @@ function Switch_login_regist(name){
         case "regist":
             document.getElementById("form_login").style.display = "none";
             document.getElementById("form_regist").style.display = "block";
-            document.getElementById("form_login").style.height = "325px";
+            document.getElementById("form_login").style.height = "380px";
             document.querySelectorAll('.errors').forEach(element => element.style.color = "rgb(249, 248, 248)");
             clear_input();
             break;

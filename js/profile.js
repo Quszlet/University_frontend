@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="normal-button" id="user-button">Оставить заявку</button>
                     </div>`
                     document.getElementById('roles-container').innerHTML += additionalContent
-                    makeRelocateButton('user-button', '../html/user-page.html')
                     break
                 case ('[ROLE_MODERATOR]'):
                     role.textContent = '(Модератор)'
@@ -41,8 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="normal-button" id="mod-button">Управление новостями</button>
                     </div>`
                     document.getElementById('roles-container').innerHTML += additionalContent
-                    makeRelocateButton('user-button', '../html/user-page.html')
-                    makeRelocateButton('mod-button', '../html/mod-page.html')
                     break
                 case ('[ROLE_ADMIN]'):
                     role.textContent = '(Администратор)'
@@ -51,12 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="block flex-column">
                         <button class="normal-button" id="user-button">Оставить заявку</button>
                         <button class="normal-button" id="mod-button">Управление новостями</button>
-                        <button class="normal-button" id="admin-button">Управление пользователями</button>
+                        <button type="button" class="normal-button" id="admin-button" onclick="pageRedict('admin-page')">Управление пользователями</button>
                     </div>`
                     document.getElementById('roles-container').innerHTML += additionalContent
-                    makeRelocateButton('user-button', '../html/user-page.html')
-                    makeRelocateButton('mod-button', '../html/mod-page.html')
-                    makeRelocateButton('admin-button', '../html/admin-page.html')
                     break
                 default:
                     break

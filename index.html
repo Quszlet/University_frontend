@@ -11,16 +11,18 @@
         <div>
             <header>
                 <img src="images/logo.png" id="logo" width="140px" height="140px">
-                <button id="text_logo" onclick="pageRedirect('main_page')">Московский Государственный Университет</button>
-                <button id="per_cabinet" onclick="pageRedirect('personal_cabinet')">Личный кабинет</button>
+                <button id="text_logo" onclick="pageRedict('main_page')">Московский Государственный Университет</button>
+                <!-- <button id="per_cabinet" onclick="pageRedict('personal_cabinet')">Личный кабинет</button> -->
             </header>
         </div>
         <form id="form_login">
             <div id="text_login_0">Вход в личный кабинет</div>
             <div id="text_login_1">Заполните поля для входа</div>
             <input id="email" placeholder="Email"  class="pole">
+            <div class="errors hide" id="firstName-err1">placeholder</div>
             <span name="login_span">Введите логин</span>
             <input id="password" placeholder="Пароль"  class="pole">
+            <div class="errors hide" id="firstName-err1">placeholder</div>
             <span name="login_span">Введите пароль</span>
             <button type="button" id="button_login">Войти</button>
             <div class="errors hide block" id="error-log">Неверный логин или пароль</div>
