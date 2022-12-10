@@ -1,0 +1,297 @@
+body{
+    background-color: rgb(249, 248, 248);
+    margin: 0;
+    font-family: Lato, Helvetica, Arial,sans-serif,-apple-system;
+}
+
+header{
+    background-color: rgb(28, 143, 210);
+    width: 100%;
+    height: 137px;
+}
+
+button {
+    cursor: pointer;
+   }
+
+#logo{
+    float: left;
+}
+
+#text_logo{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 55px;
+    color: white;
+    border: none;
+    background: none;
+}
+
+#per_cabinet, #registration, #admin_back{
+    border-radius: 3px;
+    border: 2px solid rgb(18, 35, 50);
+    float: right;
+    margin-top: 44px;
+    margin-right: 20px;
+    background-color: rgb(28, 143, 210);
+    color: rgb(255, 255, 255);
+    padding: 15px;
+}
+
+#per_cabinet:hover{
+    background-color:rgb(18, 35, 50);
+    transition: 0.7s;
+}
+
+#registration:hover{
+    background-color:rgb(18, 35, 50);
+    transition: 0.7s;
+}
+
+#admin_back:hover{
+    background-color:rgb(18, 35, 50);
+    transition: 0.7s;
+}
+
+#form_login{
+    display: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(249, 248, 248);
+    border: 2px solid rgb(18, 35, 50);
+    width: 400px;
+    height: 380px;
+}
+
+#form_login div, #form_regist div {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#text_login_0, #text_regist{
+    font-size: 20px;
+}
+
+#text_login_1{
+    font-size: 16px;
+}
+
+#form_login input, #form_regist input{
+    display: block;
+    padding: 5px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(18, 35, 50);
+}
+
+#form_login button, #form_regist button{
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    border: 0;
+}
+
+#button_login, #button_regist{
+    width: 211px;
+    padding: 2px;
+    background-color: rgb(28, 143, 210);
+    color: rgb(249, 248, 248);
+}
+
+#button_to_regist, #button_to_login{
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: left;
+    box-shadow: none;
+    color: inherit;
+    color: rgb(28, 143, 210);
+    margin-bottom: 15px;
+}
+
+#form_regist{
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 70px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(249, 248, 248);
+    border: 2px solid rgb(18, 35, 50);
+    width: 400px;
+    height: 490px;
+}
+
+#form_regist span, #form_login span{
+    display: none;
+    font-size: 13px;
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+    margin-bottom: -15px;
+
+}
+
+#footer{
+    position: fixed; 
+    left: 0; 
+    bottom: 0; 
+    padding: 10px; 
+    background: rgb(28, 143, 210); 
+    color: #fff; 
+    width: 100%; 
+}
+
+#footer_flex{
+    display: flex;
+	justify-content: space-between;
+	padding-right: 21px;
+}
+
+#access_regist{
+    display: none;
+    color: green;
+}
+
+#header{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 45%;
+    margin-top: 1%;
+}
+
+#form_login_to_cabinet{
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(249, 248, 248);
+    border: 2px solid rgb(18, 35, 50);
+    width: 400px;
+    height: 285px;
+}
+
+#form_login_to_cabinet input{
+    display: block;
+    padding: 5px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(18, 35, 50);
+}
+
+#button_login_to_cabinet{
+    width: 211px;
+    padding: 2px;
+    background-color: rgb(28, 143, 210);
+    color: rgb(249, 248, 248);
+}
+
+#form_login_to_cabinet span{
+    display: none;
+    font-size: 13px;
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+    margin-bottom: -15px;
+
+}
+
+#form_login_to_cabinet button{
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    border: 0;
+}
+
+#text_login_to_cabinet0{
+    font-size: 20px;
+}
+
+#text_login_to_cabinet1{
+    font-size: 16px;
+}
+
+#personal_cabinet{
+    display: block;
+    padding: 10px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(18, 35, 50);
+}
+
+#send_photo{
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    border: 0;
+}
+
+#logout{
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    border: 0;
+}
+
+#block{
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+#firstName-err1, #lastName-err1, #password-err1, #email-err1{
+    color: rgb(249, 248, 248);
+}
+
+#avatar {
+    width: 100px;
+    padding: 0vw 1vw 1vw 0vw;
+}
+
+.table_input{
+    background-color: white;
+    outline:none;
+    border: none;
+}
+#photo{
+    
+}
+
+table{
+    border: none;
+}

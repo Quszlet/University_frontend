@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>МГУ</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="import" href="HTML/main_page.html">
+        <link rel="import" href="../index.html">
+    </head>
+    <body>
+        <div>
+            <header>
+                <img src="../images/logo.png" id="logo" width="140px" height="140px">
+                <button id="text_logo" onclick="pageRedirect('main_page_from_cabinet')">Московский Государственный Университет</button>
+                <button id="registration" onclick="pageRedirect('registration')">Регистрация</button>
+            </header>
+        </div>
+        <form id ="personal_cabinet">
+            <table>
+                <tr>
+                    <td>
+                        <img id ="avatar" src="../images/empty_avatar.png"/>
+                        <div id="err"></div>
+                    </td>
+                    <td>
+                        <div id = "text_login_1">
+                        Здравствуйте, <span id="first-name"></span> 
+                        <span id="last-name"></span><span id="role"></span>
+                        <div class="block">Количество авторизаций: <span id="session-count"></span></div>
+                        <div class="block">Вход на страницу был осуществлен в <span id="date-and-time"></span></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="file" id="photo" block>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="send-photo">Загрузить фото</button>
+                    </td>
+                </tr>
+                
+            </table>
+            
+            <div>
+                <button id="logout">Выйти</button>
+            </div>
+            
+        </form>
+    </body>
+    <script src="../js/profile.js"></script>
+    <script src="../js/utils.js"></script>
+</html>
