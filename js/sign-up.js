@@ -31,8 +31,7 @@ document.getElementById('button_regist').addEventListener('click', e => {
             let data = await response.json()
             let errorEl = document.getElementById(`${Object.keys(data)[0]}-err1`)
             errorEl.textContent = Object.values(data)[0];
-            errorEl.classList.remove('hide')
-            document.getElementById(`${Object.keys(data)[0]}`).classList.add('error-class')
+            errorEl.style.color = "black"
         }
     })
 })

@@ -1,0 +1,43 @@
+#flex_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#flex_div input{
+    margin-top: 15px;
+}
+#flex_div .inp1{
+    width: 130px;
+}
+
+#flex_div .inp2{
+    margin-top: 15px;
+    width: 330px;
+    height: 100px;
+    resize: none;
+}
+
+#flex_div button{
+    margin-top: 15px;
+    width: 130px;
+}
+
+#flex_div span{
+    font-size: 12px;
+    margin-top: 15px;
+    color: red;
+    display: block;
+}
+
+#zav{
+    display: block;
+    padding: 10px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 340px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(18, 35, 50);
+}
+

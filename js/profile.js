@@ -26,31 +26,40 @@ document.addEventListener('DOMContentLoaded', () => {
                     role.textContent = '(Пользователь)'
                     role.style.color = '#080707'
                     additionalContent = `
-                    <div class="block flex-column">
-                        <button class="normal-button" id="user-button">Оставить заявку</button>
-                    </div>`
-                    document.getElementById('roles-container').innerHTML += additionalContent
+                    <tr>
+                         <td><button  type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
+                    </tr>`
+                    document.getElementById('table_button').innerHTML += additionalContent
                     break
                 case ('[ROLE_MODERATOR]'):
                     role.textContent = '(Модератор)'
                     role.style.color = '#3cc74a'
                     additionalContent = `
-                    <div class="block flex-column">
-                        <button class="normal-button" id="user-button">Оставить заявку</button>
-                        <button class="normal-button" id="mod-button">Управление новостями</button>
-                    </div>`
-                    document.getElementById('roles-container').innerHTML += additionalContent
+                    <tr>
+                         <td><button  type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="normal-button" id="mod-button">Управление новостями</button></td>
+                    </tr>`
+                    document.getElementById('table_button').innerHTML += additionalContent
                     break
                 case ('[ROLE_ADMIN]'):
                     role.textContent = '(Администратор)'
                     role.style.color = '#e00d23'
                     additionalContent = `
-                    <div class="block flex-column">
-                        <button class="normal-button" id="user-button">Оставить заявку</button>
-                        <button class="normal-button" id="mod-button">Управление новостями</button>
-                        <button type="button" class="normal-button" id="admin-button" onclick="pageRedict('admin-page')">Управление пользователями</button>
-                    </div>`
-                    document.getElementById('roles-container').innerHTML += additionalContent
+                        <tr>
+                            <td><button type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('mod-page')">Просмотр заявок</button></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="normal-button" id="mod-button">Управление новостями</button></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="normal-button" id="admin-button" onclick="pageRedict('admin-page')">Управление пользователями</button></td>
+                        </tr>`
+                    document.getElementById('table_button').innerHTML += additionalContent
                     break
                 default:
                     break
@@ -59,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-document.getElementById('logout').addEventListener('click', e => {
+function exit() {
     const logout_url = 'http://localhost:8080/auth/profile'
     fetch(logout_url, {
         method: 'GET',
@@ -72,9 +81,9 @@ document.getElementById('logout').addEventListener('click', e => {
             document.location.replace('../index.html')
         }
     })
-})
+}
 
-document.getElementById('send-photo').addEventListener('click', e => {
+function send_photo() {
     const upload_avatar_url = 'http://localhost:8080/avatar/send'
     let image = document.getElementById('photo').files[0]
     let formData = new FormData()
@@ -99,7 +108,7 @@ document.getElementById('send-photo').addEventListener('click', e => {
             element.textContent = data.message
         }
     })
-})
+}
 
 function reloadAvatar(url) {
     fetch(url, {

@@ -269,7 +269,8 @@ button {
 
 #block{
     font-size: 13px;
-    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
     padding: 5px;
 }
 
@@ -278,7 +279,7 @@ button {
 }
 
 #avatar {
-    width: 22vw;
+    width: 100px;
     padding: 0vw 1vw 1vw 0vw;
 }
 
@@ -287,3 +288,5 @@ button {
     outline:none;
     border: none;
 }
+
+

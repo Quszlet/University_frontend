@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    loadTable(document.getElementById('users-table'),
-        'delete-buttons', 'change-buttons')
+    CreateTable(document.getElementById('users-table'),
+        'delete-buttons', 'change-role-buttons', 'change-buttons')
 })
 
 function createUsersTable(usersData) {
@@ -24,16 +24,16 @@ function createUsersTable(usersData) {
             <td><input class="table_input" id='table_lastName-${[i]}' value='${usersData[i].lastName}'></td>
             <td><input class="table_input" id='table_email-${[i]}' value='${usersData[i].email}'></td>
             <td id="table-role-${i}">${usersData[i].role}</td>
-            <td><button id="change-${i}" class="change-buttons">Изменить данные</button></td>
-            <td><button id="delete-${i}" class="delete-buttons">Удалить</button></td>
             <td>
                 <select id="select-${i}">
-                    <option value="ROLE_USER">Пользователь</option>
+                    <option value="ROLE_USER">Студент</option>
                     <option value="ROLE_MODERATOR">Модератор</option>
                     <option value="ROLE_ADMIN">Администратор</option>
                 </select>
             </td>
             <td><button id="change-role-${i}" class="change-role-buttons">Изменить роль</button></td>
+            <td><button id="change-${i}" class="change-buttons">Изменить данные</button></td>
+            <td><button id="delete-${i}" class="delete-buttons">Удалить</button></td>
         </tr>`
         html += additionalHtml
     }
@@ -45,7 +45,7 @@ function paintTable(usersData) {
         let role = document.getElementById(`table-role-${i}`)
         switch (usersData[i].role) {
             case 'ROLE_USER':
-                role.textContent = 'Пользователь'
+                role.textContent = 'Студент'
                 role.style.color = '#080707'
                 break
             case 'ROLE_MODERATOR':
@@ -78,8 +78,8 @@ function addEventsToButtons(buttonType, usersData) {
                         if (response.ok) {
                             let data = await response.json()
                             alert(`Пользователь с id=${data.message} был удален из базы данных`)
-                            loadTable(document.getElementById('users-table'),
-                                'delete-buttons', 'change-buttons')
+                            CreateTable(document.getElementById('users-table'),
+                                'delete-buttons', 'change-role-buttons', 'change-buttons')
                         }
                     })
                 })
@@ -87,6 +87,7 @@ function addEventsToButtons(buttonType, usersData) {
             break
         case 'change-role-buttons':
             for (let i = 0; i < usersData.length; i++) {
+                console.log(123);
                 document.getElementById(`change-role-${i}`).addEventListener('click', () => {
                     let select = document.getElementById(`select-${i}`)
                     let change_url = `http://localhost:8080/users/raise/${usersData[i].id}/${select.value}`
@@ -100,15 +101,14 @@ function addEventsToButtons(buttonType, usersData) {
                         if (response.ok) {
                             let data = await response.json()
                             alert(`Пользователю с id=${usersData[i].id} была присовена роль новая роль`)
-                            loadTable(document.getElementById('users-table'),
-                                'delete-buttons', 'change-buttons')
+                            CreateTable(document.getElementById('users-table'),
+                            'delete-buttons', 'change-role-buttons', 'change-buttons')
                         }
                     })
                 })
             }
             break
             case 'change-buttons':
-                console.log(usersData.length)
                 for (let i = 0; i < usersData.length; i++) {
                     document.getElementById(`change-${i}`).addEventListener('click', () => {
                         let change_url = `http://localhost:8080/users/change/${usersData[i].id}`
@@ -128,8 +128,8 @@ function addEventsToButtons(buttonType, usersData) {
                             if (response.ok) {
                                 let data = await response.json()
                                 alert(`Данные пользователя с id = ${usersData[i]}  изменены!`)
-                                loadTable(document.getElementById('users-table'),
-                                    'delete-buttons', 'change-buttons')
+                                CreateTable(document.getElementById('users-table'),
+                                'delete-buttons', 'change-role-buttons', 'change-buttons')
                             }
                         })
                     })
@@ -140,7 +140,7 @@ function addEventsToButtons(buttonType, usersData) {
     }
 }
 
-function loadTable(tableEl, ...buttonTypes) {
+function CreateTable(tableEl, ...buttonTypes) {
     const users_data_url = 'http://localhost:8080/users/all'
     fetch(users_data_url, {
         method: 'GET',
