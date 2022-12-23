@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function CreateModTabel(Data){
+    console.log(Data)
     let caption_table = `
     <tr>
         <td>Id вопроса</td>
@@ -20,7 +21,7 @@ function CreateModTabel(Data){
             <td><input class="table_input" id='table_firstName-${[i]}' value='${Data[i].first_name}'></td>
             <td><input class="table_input" id='table_lastName-${[i]}' value='${Data[i].last_name}'></td>
             <td><input class="table_input" id='table_email-${[i]}' value='${Data[i].email}'></td>
-            <td><textarea class="table_input" id='table_full_text-${[i]}'>${Data[i].full_text}</textarea></td>
+            <td><input class="table_input" id='table_full_text-${[i]}' value='${Data[i].full_text}'></td>
             <td><button id="download-${i}" class="download-buttons">Загрузить</button></td>
             <td><button id="change-${i}" class="change-buttons">Изменить</button></td>
             <td><button id="delete-${i}" class="delete-buttons">Удалить</button></td>
@@ -31,7 +32,7 @@ function CreateModTabel(Data){
 }
 
 function workloadTable(...buttonTypes){
-    const url_get_form = 'http://localhost:8080/form/get/all'
+    const url_get_form = 'http://localhost:8080/form/get'
     fetch(url_get_form, {
         method: 'GET',
         headers: {
@@ -41,7 +42,7 @@ function workloadTable(...buttonTypes){
     }).then(async response => {
         if (response.ok) {
             let data = await response.json()
-            document.getElementById("moder-table").innerHTML = CreateModTabel(data)
+            document.getElementById("userform-table").innerHTML = CreateModTabel(data)
             for (let i = 0; i < buttonTypes.length; i++) {
                 addEventsToButtonsMod(buttonTypes[i], data)
             }
@@ -51,7 +52,7 @@ function workloadTable(...buttonTypes){
     })
 }
 
-function addEventsToButtonsMod(buttonType, usersData) {
+async function addEventsToButtonsMod(buttonType, usersData) {
     switch (buttonType) {
         case 'delete-buttons':
             for (let i = 0; i < usersData.length; i++) {
@@ -149,3 +150,5 @@ function addEventsToButtonsMod(buttonType, usersData) {
             break
     }
 }
+
+

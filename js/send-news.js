@@ -1,15 +1,13 @@
-function send_info() {
-    const upload_info_url = 'http://localhost:8080/form/send'
-    let file = document.getElementById('additional-info').files[0];
+function send_news() {
+    const upload_info_url = 'http://localhost:8080/news/send'
+    let file = document.getElementById('image').files[0];
     let formData = new FormData()
-    formData.append('first_name', document.getElementById('first_name').value)
-    formData.append('last_name', document.getElementById('last_name').value)
-    formData.append('email', document.getElementById('email').value)
-    formData.append('full_text', document.getElementById('full_text').value)
+    formData.append('title', document.getElementById('title').value)
+    formData.append('text', document.getElementById('text').value)
     if (file === undefined){
         file = new File([""], "")
     }
-    formData.append('file', file)
+    formData.append('image', file)
     update_error_span()
     fetch(upload_info_url, {
         method: 'POST',
@@ -17,7 +15,7 @@ function send_info() {
         headers: {'Authorization': `Bearer ${sessionStorage.getItem('token')}`}
     }).then(async response => {
         if (response.ok) {
-            alert("Форма отправлена")  
+            alert("Новость отправлена")  
         } else if (response.status == 400) {
             let data = await response.json()
             let fields = Object.keys(data)
@@ -26,6 +24,9 @@ function send_info() {
                 document.getElementById(`${fields[i]}_err`).innerHTML = errors[i]
                 document.getElementById(`${fields[i]}_err`).style.color = "red"
             }   
+        } else if (response.status == 500){
+            document.getElementById("file_err").innerHTML = "Формат файла не поддерживается"
+            document.getElementById("file_err").style.color = "red"
         }
     })
     

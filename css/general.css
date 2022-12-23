@@ -138,3 +138,7 @@ color: #6699ff;
     color: rgb(249, 248, 248);
     display: none;
 }
+
+table textarea{
+    height: 100px;
+}

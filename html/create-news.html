@@ -16,20 +16,16 @@
                 <button id="registration" onclick="pageRedict('personal_cabinet')">Личный кабинет</button>
             </header>
         </div>
-        <form id = "zav">
-            <div style="text-align: center"><strong>Вопросы и предложения</strong></div>
-            <div id="flex_div_form">
-                <input id="first_name" class="inp1" placeholder="Имя">
-                <span id="first_name_err" name="error_span"></span>
-                <input id="last_name" class="inp1" placeholder="Фамилия">
-                <span id="last_name_err" name="error_span"></span>
-                <input id="email" class="inp1" placeholder="Электронная почта" >
-                <span id="email_err" name="error_span"></span>
-                <textarea id="full_text" class="inp2" placeholder="Текст сообщения..."></textarea>
-                <span id="full_text_err" name="error_span"></span>
-                <input type="file" id="additional-info">
-          
-                <button type="button" onclick="send_info()">Оставить заявку</button>
+        <form id = "news_create">
+            <div style="text-align: center"><strong>Создание новости</strong></div>
+            <div id="flex_div_news">
+                <input id="title" class="inp1" placeholder="Заголовок">
+                <span id="title_err" name="error_span"></span>
+                <textarea id="text" class="inp2" placeholder="Текст новости..."></textarea>
+                <span id="text_err" name="error_span"></span>
+                <input type="file" id="image">
+                <span id="file_err" name="error_span"></span>
+                <button type="button" onclick="send_news()">Создать новость</button>
             </div>
         </form>
         <div id="footer">
@@ -40,5 +36,5 @@
         </div>
     </body>
     <script src="../js/redict.js"></script>
-    <script src="../js/send-form.js"></script>
+    <script src="../js/send-news.js"></script>
 </html>

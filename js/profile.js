@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     additionalContent = `
                     <tr>
                          <td><button  type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
+                    </tr>
+                    <tr>
+                    <td><button type="button" class="normal-button" id="userPage-button" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button></td>
+                    </tr>
+                    <tr>
+                    <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('news')">Новости</button></td>
                     </tr>`
                     document.getElementById('table_button').innerHTML += additionalContent
                     break
@@ -36,10 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     role.style.color = '#3cc74a'
                     additionalContent = `
                     <tr>
-                         <td><button  type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
+                    <td><button type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
                     </tr>
                     <tr>
-                        <td><button class="normal-button" id="mod-button">Управление новостями</button></td>
+                    <td><button type="button" class="normal-button" id="userPage-button" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button></td>
+                    </tr>
+                    <tr>
+                    <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('mod-page')">Просмотр всех заявок</button></td>
+                    </tr>
+                    <tr>
+                    <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('news')">Новости</button></td>
+                    </tr>
+                    <tr>
+                    <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('create-news')">Создать новость</button></td>
                     </tr>`
                     document.getElementById('table_button').innerHTML += additionalContent
                     break
@@ -51,10 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
                             <td><button type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
                         </tr>
                         <tr>
+                            <td><button type="button" class="normal-button" id="userPage-button" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button></td>
+                        </tr>
+                        <tr>
                             <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('mod-page')">Просмотр заявок</button></td>
                         </tr>
                         <tr>
-                            <td><button type="button" class="normal-button" id="mod-button">Управление новостями</button></td>
+                            <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('create-news')">Создать новость</button></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('news')">Новости</button></td>
                         </tr>
                         <tr>
                             <td><button type="button" class="normal-button" id="admin-button" onclick="pageRedict('admin-page')">Управление пользователями</button></td>

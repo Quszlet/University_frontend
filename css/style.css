@@ -290,3 +290,8 @@ button {
 }
 
 
+#moder-table textarea{
+    width: 350px;
+    height: 75px;
+    resize: none;
+}
