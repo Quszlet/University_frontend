@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>МГУ</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="/css/form-page.css">
+        <link rel="import" href="./main_page.html">
+        <link rel="import" href="./personal_cabinet.html">
+    </head>
+    <body>
+        <div>
+            <header>
+                <img src="../images/logo.png" id="logo" width="140px" height="140px">
+                <button id="text_logo" onclick="pageRedirect('main_page_from_cabinet')">Московский Государственный Университет</button>
+                <button id="registration" onclick="pageRedict('personal_cabinet')">Личный кабинет</button>
+            </header>
+        </div>
+        <form id = "news_create">
+            <div style="text-align: center"><strong>Создание новости</strong></div>
+            <div id="flex_div_news">
+                <input id="title" class="inp1" placeholder="Заголовок">
+                <span id="title_err" name="error_span"></span>
+                <textarea id="text" class="inp2" placeholder="Текст новости..."></textarea>
+                <span id="text_err" name="error_span"></span>
+                <input type="file" id="image">
+                <span id="file_err" name="error_span"></span>
+                <button type="button" onclick="send_news()">Создать новость</button>
+            </div>
+        </form>
+        <div id="footer">
+            <div id="footer_flex">
+                <div>&copy; 21ВП2 Изгарев Владислав & Копылов Егор</div>
+                <div>МГУ</div>
+            </div>
+        </div>
+    </body>
+    <script src="../js/redict.js"></script>
+    <script src="../js/send-news.js"></script>
+</html>

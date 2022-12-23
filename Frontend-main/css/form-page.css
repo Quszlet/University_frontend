@@ -1,0 +1,86 @@
+#flex_div_news{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#flex_div_news input{
+    margin-top: 15px;
+}
+#flex_div_news .inp1{
+    width: 400px;
+}
+
+#flex_div_news .inp2{
+    margin-top: 15px;
+    width: 493px;
+    height: 100px;
+    resize: none;
+}
+
+#flex_div_news button{
+    margin-top: 15px;
+    width: 130px;
+}
+
+#flex_div_news span{
+    font-size: 12px;
+    margin-top: 15px;
+    color: red;
+    display: block;
+}
+
+#zav{
+    display: block;
+    padding: 10px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 340px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(18, 35, 50);
+}
+
+#news_create{
+    display: block;
+    padding: 10px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(18, 35, 50);
+}
+
+#flex_div_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#flex_div_form input{
+    margin-top: 15px;
+}
+#flex_div_form .inp1{
+    width: 200px;
+}
+
+#flex_div_form .inp2{
+    margin-top: 15px;
+    width: 335px;
+    height: 100px;
+    resize: none;
+}
+
+#flex_div_form button{
+    margin-top: 15px;
+    width: 130px;
+}
+
+#flex_div_form span{
+    font-size: 12px;
+    margin-top: 15px;
+    color: red;
+    display: block;
+}
+
