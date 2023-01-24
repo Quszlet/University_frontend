@@ -1,6 +1,7 @@
 document.getElementById('button_regist').addEventListener('click', e => {
     document.querySelectorAll('.errors').forEach(element => element.classList.add('hide'))
     document.querySelectorAll('.pole').forEach(element => element.classList.remove('error-class'))
+    document.getElementsByClassName("errors")
 
     let requestBody = {
         "firstName": document.getElementById('type_name').value,
@@ -8,8 +9,10 @@ document.getElementById('button_regist').addEventListener('click', e => {
         "email": document.getElementById('type_email').value,
         "password": document.getElementById('type_password').value
     }
+
     console.log(requestBody);
-    const url = 'http://localhost:8080/auth/signup';
+
+    const url = 'http://127.0.0.1:8888/auth/signup';
 
     fetch(url, {
         method: 'POST',
