@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function create_news(){
-    fetch("http://localhost:8080/news/get", {
+    fetch("http://localhost:8888/news/get", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ function AddEventsSendUpdate(data, i) {
     
     document.getElementById(`change-${i}`).addEventListener('click', () => {
         update_error_span()
-        const upload_avatar_url = `http://localhost:8080/news/update/${data[i].id}`
+        const upload_avatar_url = `http://localhost:8888/news/update/${data[i].id}`
         let image = document.getElementById(`file-${i}`).files[0]
         if (image === undefined){
             image = new File([""], "")
@@ -122,7 +122,7 @@ function AddEventsSendUpdate(data, i) {
     })
 
     document.getElementById(`delete-${i}`).addEventListener('click', () => {
-        const upload_avatar_url = `http://localhost:8080/news/delete/${data[i].id}`
+        const upload_avatar_url = `http://localhost:8888/news/delete/${data[i].id}`
         fetch(upload_avatar_url, {
             method: 'DELETE',
             headers: {'Authorization': `Bearer ${sessionStorage.getItem('token')}`}

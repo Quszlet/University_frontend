@@ -1,29 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Вход</title>
-  <link rel="stylesheet" href="../css/general.css">
-</head>
-<body>
-  <div class="form">
-    <h1>Авторизация</h1>
-    <div class="inputs">
-      <label>Email</label>
-      <input type="text" id="email" class="pole">
-      <div class="errors hide" id="email-err">placeholder</div>
-    </div>
-    <div class="inputs">
-      <label>Пароль</label>
-      <input type="password" id="password" class="pole">
-      <div class="errors hide" id="password-err">placeholder</div>
-    </div>
-    <button id="login" class="normal-button">Войти</button>
-    <div class="errors hide block" id="error-log">placeholder</div>
-    <div class="block">Если у вас нет аккаунта, создать его вы можете <a href="sign-up.html">здесь</a></div>
-    <div><a href="../index.html">Назад</a></div>
-  </div>
-  <script src="../js/utils.js"></script>
-  <script src="../js/sign-in.js"></script>
-</body>
+<html>
+    <head>
+        <title>МГУ</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="import" href="HTML/personal_cabinet.html">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="/css/news.css">
+        <link rel="import" href="./main_page.html">
+        <link rel="import" href="./personal_cabinet.html">
+    </head>
+    <body>
+        <div>
+            <header>
+                <a href="/index.html"><img src="../images/logo.png" id="logo"></a>
+            </header>
+        </div>
+        <form id="form_login">
+            <div id="text_login_0">Вход в личный кабинет</div>
+            <div id="text_login_1">Заполните поля для входа</div>
+            <input id="email" placeholder="Email"  class="pole">
+            <div class="errors hide" id="firstName-err1">placeholder</div>
+            <span name="login_span">Введите логин</span>
+            <input id="password" placeholder="Пароль"  class="pole">
+            <div class="errors hide" id="firstName-err1">placeholder</div>
+            <span name="login_span">Введите пароль</span>
+            <button type="button" id="button_login">Войти</button>
+            <div class="errors hide block" id="error-log">Неверный логин или пароль</div>
+            <button type="button" id="button_to_regist" onclick="Switch_login_regist('regist')">Зарегистрироваться</button>
+        </form>
+        <form id="form_regist">
+            <div id="text_regist">Регистрация</div>
+            <div id="access_regist">Пользователь зарегистрирован</div>
+            <input id="type_name" placeholder="Имя">
+            <div class="errors hide" id="firstName-err1"></div>
+            <input id="type_surname" placeholder="Фамилия">
+            <div class="errors hide" id="lastName-err1"></div>
+            <input id="type_password" placeholder="Пароль">
+            <div class="errors hide" id="password-err1"></div>
+            <input id="type_email" placeholder="Email">
+            <div class="errors hide" id="email-err1"></div>
+            <button type="button" id="button_regist">Зарегистрироваться</button>
+            <button type="button" id="button_to_login" onclick="Switch_login_regist('login')">Вход</button>
+        </form>
+        </div>
+        <div id="footer">
+            <div id="footer_flex">
+                <div>&copy; 21ВП2 Рыжов Андрей</div>
+            </div>
+        </div>       
+    </body>
+    <script src="/js/sign-up.js"></script>
+    <script src="/js/sign-in.js"></script>
+    <script src="/js/SwitchLoginRegist.js"></script>
+    <script src="/js/utils.js"></script>
 </html>

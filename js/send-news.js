@@ -1,6 +1,6 @@
 function send_news() {
-    const upload_info_url = 'http://localhost:8080/news/send'
-    let file = document.getElementById('image').files[0];
+    const upload_info_url = 'http://localhost:8888/news/send'
+    let file = document.getElementById('inputGroupFile02').files[0];
     let formData = new FormData()
     formData.append('title', document.getElementById('title').value)
     formData.append('text', document.getElementById('text').value)

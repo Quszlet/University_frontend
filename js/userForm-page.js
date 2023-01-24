@@ -32,7 +32,7 @@ function CreateModTabel(Data){
 }
 
 function workloadTable(...buttonTypes){
-    const url_get_form = 'http://localhost:8080/form/get'
+    const url_get_form = 'http://localhost:8888/form/get'
     fetch(url_get_form, {
         method: 'GET',
         headers: {
@@ -57,7 +57,7 @@ async function addEventsToButtonsMod(buttonType, usersData) {
         case 'delete-buttons':
             for (let i = 0; i < usersData.length; i++) {
                 document.getElementById(`delete-${i}`).addEventListener('click', () => {
-                    let delete_url = `http://localhost:8080/form/delete/${usersData[i].id}`
+                    let delete_url = `http://localhost:8888/form/delete/${usersData[i].id}`
                     fetch(delete_url, {
                         method: 'DELETE',
                         headers: {
@@ -77,7 +77,7 @@ async function addEventsToButtonsMod(buttonType, usersData) {
             case 'change-buttons':
                 for (let i = 0; i < usersData.length; i++) {
                     document.getElementById(`change-${i}`).addEventListener('click', () => {
-                        let change_url = `http://localhost:8080/form/change/${usersData[i].id}`
+                        let change_url = `http://localhost:8888/form/change/${usersData[i].id}`
                         let requestBody = {
                             "first_name": document.getElementById(`table_firstName-${[i]}`).value,
                             "last_name": document.getElementById(`table_lastName-${[i]}`).value,
@@ -104,7 +104,7 @@ async function addEventsToButtonsMod(buttonType, usersData) {
                 case 'download-buttons':
                     for (let i = 0; i < usersData.length; i++) {
                         document.getElementById(`download-${i}`).addEventListener('click', () => {
-                            let download_url = `http://localhost:8080/form/get/${usersData[i].id}`
+                            let download_url = `http://localhost:8888/form/get/${usersData[i].id}`
                             let type = ""
                             fetch(download_url, {
                                 method: 'GET',
@@ -118,7 +118,7 @@ async function addEventsToButtonsMod(buttonType, usersData) {
                                         
                                     }
                                 })
-                            let downdload_url = `http://localhost:8080/form/download/${usersData[i].id}`
+                            let downdload_url = `http://localhost:8888/form/download/${usersData[i].id}`
                             fetch(downdload_url, {
                                 method: 'GET',
                                 headers: {

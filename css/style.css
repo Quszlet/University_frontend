@@ -5,35 +5,31 @@ body{
 }
 
 header{
-    background-color: rgb(28, 143, 210);
+    background-color: rgb(2, 112, 255);
     width: 100%;
-    height: 137px;
+    height: 70px;
 }
-
-button {
-    cursor: pointer;
-   }
 
 #logo{
+    margin-top: 5px;
+    margin-left: 50px;
+    width: 244px; 
+    height: 60px;
     float: left;
 }
-
-#text_logo{
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 55px;
-    color: white;
-    border: none;
-    background: none;
+#avatar{
+    padding: 10px;
+    width: 250px;
+    height: 190px;
 }
 
 #per_cabinet, #registration, #admin_back{
     border-radius: 3px;
     border: 2px solid rgb(18, 35, 50);
     float: right;
-    margin-top: 44px;
-    margin-right: 20px;
-    background-color: rgb(28, 143, 210);
+    margin-top: 10px;
+    margin-right: 50px;
+    background-color: rgb(2, 112, 255);
     color: rgb(255, 255, 255);
     padding: 15px;
 }
@@ -154,13 +150,12 @@ button {
     left: 0; 
     bottom: 0; 
     padding: 10px; 
-    background: rgb(28, 143, 210); 
+    background: rgb(2, 112, 255); 
     color: #fff; 
     width: 100%; 
 }
 
 #footer_flex{
-    display: flex;
 	justify-content: space-between;
 	padding-right: 21px;
 }
@@ -245,8 +240,6 @@ button {
     margin-right: auto;
     width: 500px;
     font-size: 15px;
-    border-radius: 6px;
-    border: 1px solid rgb(18, 35, 50);
 }
 
 #send_photo{
@@ -278,11 +271,6 @@ button {
     color: rgb(249, 248, 248);
 }
 
-#avatar {
-    width: 100px;
-    padding: 0vw 1vw 1vw 0vw;
-}
-
 .table_input{
     background-color: white;
     outline:none;
@@ -294,4 +282,11 @@ button {
     width: 350px;
     height: 75px;
     resize: none;
+}
+
+#personal_cabinet{
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
 }

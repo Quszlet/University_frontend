@@ -7,7 +7,7 @@ document.getElementById('button_login').addEventListener('click', e => {
         "password": document.getElementById('password').value
     }
 
-    const url = 'http://localhost:8080/auth/signin'
+    const url = 'http://localhost:8888/auth/signin'
 
     fetch(url, {
         method: 'POST',

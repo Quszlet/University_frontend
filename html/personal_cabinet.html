@@ -4,6 +4,8 @@
     <head>
         <title>МГУ</title>
         <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="import" href="HTML/main_page.html">
         <link rel="import" href="../index.html">
@@ -11,49 +13,39 @@
     <body>
         <div>
             <header>
-                <img src="../images/logo.png" id="logo" width="140px" height="140px">
-                <button id="text_logo" onclick="pageRedict('news')">Московский Государственный Университет</button>
+                <a href="/index.html"><img src="../images/logo.png" id="logo"></a>
             </header>
         </div>
-        <form id ="personal_cabinet">
-            <table id="table_button">
-                <tr>
-                    <td>
-                        <img id ="avatar" src="../images/empty_avatar.png"/>
-                        <div id="err"></div>
-                    </td>
-                    <td>
-                        <div id = "text_login_1">
-                        Здравствуйте, <span id="first-name"></span> 
-                        <span id="last-name"></span><span id="role"></span>
-                        <div class="block">Количество авторизаций: <span id="session-count"></span></div>
-                        <div class="block">Вход на страницу был осуществлен в <span id="date-and-time"></span></div>
+        <div id="personal_cabinet">
+            <div class="card" style="width: rem;">
+                <img class="card-img-top" id="avatar" src="../images/empty_avatar.png">
+                <div class="card-body">
+                <h5 class="card-title">Здравствуйте, <span id="first-name"></span> 
+                    <span id="last-name"></span></h5>
+                <p class="card-text">Ваша роль: <span id="role"></span></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">Количество авторизаций: <span id="session-count"></span></li>
+                <li class="list-group-item">Вход на страницу был осуществлен <span id="date-and-time"></li>
+                <li class="list-group-item">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile0">
+                        <label class="custom-file-label" for="inputGroupFile02"></label>
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="file" id="photo" block>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="button" id="send-photo" onclick="send_photo()">Загрузить фото</button>
-                    </td>
-                </tr>
-                
-                
-                
-            </table>
-            <div>
-                <button type="button" id="logout" onclick="exit()">Выйти</button>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button" onclick="send_photo()">Загрузить</button>
+                        </div>
+                    </div>
+                </li>
+                </ul>
+                <div class="card-body" id="table_button"></div>
+                <button class="btn btn-dark" type="button" id="logout" onclick="exit()">Выйти</button>
             </div>
-            
-        </form>
+        </div>
         <div id="footer">
             <div id="footer_flex">
-                <div>&copy; 21ВП2 Изгарев Владислав & Копылов Егор</div>
-                <div>МГУ</div>
+                <div>&copy; 21ВП2 Рыжов Андрей</div>
             </div>
         </div>
     </body>

@@ -67,7 +67,7 @@ function addEventsToButtons(buttonType, usersData) {
         case 'delete-buttons':
             for (let i = 0; i < usersData.length; i++) {
                 document.getElementById(`delete-${i}`).addEventListener('click', () => {
-                    let delete_url = `http://localhost:8080/users/delete/${usersData[i].id}`
+                    let delete_url = `http://localhost:8888/users/delete/${usersData[i].id}`
                     fetch(delete_url, {
                         method: 'DELETE',
                         headers: {
@@ -90,7 +90,7 @@ function addEventsToButtons(buttonType, usersData) {
                 console.log(123);
                 document.getElementById(`change-role-${i}`).addEventListener('click', () => {
                     let select = document.getElementById(`select-${i}`)
-                    let change_url = `http://localhost:8080/users/raise/${usersData[i].id}/${select.value}`
+                    let change_url = `http://localhost:8888/users/raise/${usersData[i].id}/${select.value}`
                     fetch(change_url, {
                         method: 'PUT',
                         headers: {
@@ -111,7 +111,7 @@ function addEventsToButtons(buttonType, usersData) {
             case 'change-buttons':
                 for (let i = 0; i < usersData.length; i++) {
                     document.getElementById(`change-${i}`).addEventListener('click', () => {
-                        let change_url = `http://localhost:8080/users/change/${usersData[i].id}`
+                        let change_url = `http://localhost:8888/users/change/${usersData[i].id}`
                         let requestBody = {
                             "firstName": document.getElementById(`table_firstName-${[i]}`).value,
                             "lastName": document.getElementById(`table_lastName-${[i]}`).value,
@@ -141,7 +141,7 @@ function addEventsToButtons(buttonType, usersData) {
 }
 
 function CreateTable(tableEl, ...buttonTypes) {
-    const users_data_url = 'http://localhost:8080/users/all'
+    const users_data_url = 'http://localhost:8888/users/all'
     fetch(users_data_url, {
         method: 'GET',
         headers: {

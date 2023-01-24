@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const avatar_url = 'http://localhost:8080/avatar/get'
-    const data_url = 'http://localhost:8080/auth/profile'
+    const avatar_url = 'http://localhost:8888/avatar/get'
+    const data_url = 'http://localhost:8888/auth/profile'
 
     reloadAvatar(avatar_url)
 
@@ -26,60 +26,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     role.textContent = '(Пользователь)'
                     role.style.color = '#080707'
                     additionalContent = `
-                    <tr>
-                         <td><button  type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
-                    </tr>
-                    <tr>
-                    <td><button type="button" class="normal-button" id="userPage-button" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button></td>
-                    </tr>
-                    <tr>
-                    <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('news')">Новости</button></td>
-                    </tr>`
+                    <button  type="button" id="user-button" class="btn btn-primary" onclick="pageRedict('form-page')">Оставить заявку</button>
+                    <button type="button" id="userPage-button" class="btn btn-primary" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button>
+                    <button type="button" id="mod-button" class="btn btn-primary" onclick="pageRedict('news')">Новости</button>`
                     document.getElementById('table_button').innerHTML += additionalContent
                     break
                 case ('[ROLE_MODERATOR]'):
                     role.textContent = '(Модератор)'
                     role.style.color = '#3cc74a'
                     additionalContent = `
-                    <tr>
-                    <td><button type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
-                    </tr>
-                    <tr>
-                    <td><button type="button" class="normal-button" id="userPage-button" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button></td>
-                    </tr>
-                    <tr>
-                    <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('mod-page')">Просмотр всех заявок</button></td>
-                    </tr>
-                    <tr>
-                    <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('news')">Новости</button></td>
-                    </tr>
-                    <tr>
-                    <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('create-news')">Создать новость</button></td>
-                    </tr>`
+                    <button type="button" class="btn btn-primary" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button>
+                    <button type="button" class="btn btn-primary" id="userPage-button" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button>
+                    <button type="button" class="btn btn-primary" id="mod-button" onclick="pageRedict('mod-page')">Просмотр всех заявок</button>
+                    <button type="button" class="btn btn-primary" id="mod-button" onclick="pageRedict('news')">Новости</button>
+                    <button type="button" class="btn btn-primary" id="mod-button" onclick="pageRedict('create-news')">Создать новость</button>`
                     document.getElementById('table_button').innerHTML += additionalContent
                     break
                 case ('[ROLE_ADMIN]'):
                     role.textContent = '(Администратор)'
                     role.style.color = '#e00d23'
                     additionalContent = `
-                        <tr>
-                            <td><button type="button" class="normal-button" id="user-button" onclick="pageRedict('form-page')">Оставить заявку</button></td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="normal-button" id="userPage-button" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button></td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('mod-page')">Просмотр заявок</button></td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('create-news')">Создать новость</button></td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="normal-button" id="mod-button" onclick="pageRedict('news')">Новости</button></td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="normal-button" id="admin-button" onclick="pageRedict('admin-page')">Управление пользователями</button></td>
-                        </tr>`
+                    <button type="button" class="btn btn-primary" id="user-button" onclick="pageRedict('form-page')>Оставить заявку</button>
+                    <button type="button" class="btn btn-primary" id="userPage-button" onclick="pageRedict('user-form-page')">Просмотр своих заявок</button>
+                    <button type="button" class="btn btn-primary" id="mod-button" onclick="pageRedict('mod-page')">Просмотр заявок</button>
+                    <button type="button" class="btn btn-primary" id="mod-button" onclick="pageRedict('create-news')">Создать новость</button>
+                    <button type="button" class="btn btn-primary" id="mod-button" onclick="pageRedict('news')">Новости</button>
+                    <button type="button" class="btn btn-primary" id="admin-button" onclick="pageRedict('admin-page')">Управление пользователями</button>`
                     document.getElementById('table_button').innerHTML += additionalContent
                     break
                 default:
@@ -90,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function exit() {
-    const logout_url = 'http://localhost:8080/auth/profile'
+    const logout_url = 'http://localhost:8888/auth/profile'
     fetch(logout_url, {
         method: 'GET',
         headers: {
@@ -105,8 +77,8 @@ function exit() {
 }
 
 function send_photo() {
-    const upload_avatar_url = 'http://localhost:8080/avatar/send'
-    let image = document.getElementById('photo').files[0]
+    const upload_avatar_url = 'http://localhost:8888/avatar/send'
+    let image = document.getElementById('inputGroupFile0').files[0]
     let formData = new FormData()
     formData.append('image', image)
     fetch(upload_avatar_url, {
@@ -115,7 +87,7 @@ function send_photo() {
         headers: {'Authorization': `Bearer ${sessionStorage.getItem('token')}`}
     }).then(async response => {
         if (response.ok) {
-            const avatar_url = 'http://localhost:8080/avatar/get'
+            const avatar_url = 'http://localhost:8888/avatar/get'
             reloadAvatar(avatar_url)
         } else if (response.status == 406) {
             let data = await response.json()

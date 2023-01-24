@@ -1,6 +1,6 @@
 function send_info() {
-    const upload_info_url = 'http://localhost:8080/form/send'
-    let file = document.getElementById('additional-info').files[0];
+    const upload_info_url = 'http://localhost:8888/form/send'
+    let file = document.getElementById('inputGroupFile02').files[0];
     let formData = new FormData()
     formData.append('first_name', document.getElementById('first_name').value)
     formData.append('last_name', document.getElementById('last_name').value)
